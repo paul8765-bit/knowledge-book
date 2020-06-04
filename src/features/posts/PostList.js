@@ -4,6 +4,7 @@ import { NewPostForm } from './NewPostForm';
 import { addPost } from './PostListSlice';
 import { Post } from './Post'
 import store from '../../app/store';
+import { cloneDeep } from 'lodash';
 
 function PostList(props) {
     const dispatch = useDispatch();
@@ -16,24 +17,27 @@ function PostList(props) {
             newPosts.forEach(post => postsInState.push(post));
         }
 
-        // Now render all posts
-        const renderedPosts = [];
-        postsInState.forEach((post) => {
-            const renderedPost = new Post({
-                //text, source, author
-                postedBy: post.Post.author,
-                postContent: post.Post.text,
-                postSource: post.Post.source
-            }).render();
-            renderedPosts.unshift(renderedPost);
-        });
-        return renderedPosts;
+        return postsInState;
     };
+
+    const existingPosts = getAllPostsFromState(props.posts);
+    const existingPostsReverseOrder = cloneDeep(existingPosts).reverse();
     
     return (
     <div className="postList">
         <NewPostForm />
-        {getAllPostsFromState(props.posts)}
+        <div className="postListExistingPosts">
+          {existingPostsReverseOrder.map(post => {
+            const postKey = Math.floor(Math.random() * 100000);
+            return (
+              <Post 
+                key={postKey}
+                postedBy={post.Post.author}
+                postContent={post.Post.text}
+                postSource={post.Post.source}
+              />);
+          })}
+        </div>
     </div>
     );
 }
