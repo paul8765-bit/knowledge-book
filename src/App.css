@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+  background-color: snow;
+}
+
+.App-logo {
+  height: 4vmax;
+  width: 20vmax;
+  pointer-events: none;
+  padding-left: 1vmax;
+  padding-top: 1vmax;
+}
+
+.App-header {
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+.postList {
+  border: lavender;
+  border-radius: 2px;
+  border-style: ridge;
+  margin: 1vh;
+}
+
+.post {
+  border: seagreen;
+  border-radius: 3px;
+  border-style: ridge;
+  margin: 1vh;
+  overflow: hidden;
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.postLikeButton {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  float: right;
+}
+
+.postAuthor {
+  display:flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.postAuthorImage {
+  height: 40px;
+  width: 40px;
+  padding-right: 40px;
+}
+
+.postContent {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.newPostForm {
+  border: steelblue;
+  border-radius: 3px;
+  border-style: ridge;
+  margin: 1vh;
+  overflow: hidden;
+  background-color: lightgreen;
+}
+
+.newPostSubmitButton {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  float: right;
+
+}
+
+.newPostAuthor {
+  display:flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.newPostAuthorImage {
+  height: 40px;
+  width: 40px;
+  padding-right: 40px;
+}
+
+.newPostContent {
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.newPostContentText {
+  font-size: xx-large;
+  width: 85vw;
+  height: 10vw;
+}
+
+.newPostContentSource {
+  font-size: x-large;
+}
