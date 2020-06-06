@@ -24,10 +24,13 @@ export function NewPostContent() {
 
     return (
         <div className="newPostContent">
-            <input className="newPostContentText" type="text" value={newPostContentText} onChange={(e) => {setNewPostContentText(e.target.value)}}></input><br />
+            <input className="newPostContentText" type="text" value={newPostContentText} 
+                    onChange={(e) => {setNewPostContentText(e.target.value)}}></input><br />
             <input type="checkbox" name="input_checkbox" id="input_checkbox" />
             <label htmlFor="input_checkbox">This is a fact, not opinion</label><br />
-            <input className="newPostContentSource" type="text" value={newPostContentSource} onChange={(e) => {setNewPostContentSource(e.target.value)}}></input>
+            <h3>Source: </h3>
+            <input className="newPostContentSource" type="text" value={newPostContentSource} 
+                    onChange={(e) => {setNewPostContentSource(e.target.value)}}></input>
             <button className="newPostSubmitButton" type="button" 
                     onClick={onClick}>Submit</button>
         </div>
