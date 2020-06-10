@@ -87,4 +87,4 @@ export const postListSlice = createSlice({
 
 export const { addPost, toggleLikePost, acceptPost, rejectPost } = postListSlice.actions;
 
-export const PostListSliceReducer = postListSlice.reducer;
+export default postListSlice.reducer;

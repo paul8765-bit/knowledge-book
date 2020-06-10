@@ -110,3 +110,8 @@
 .newPostContentSource {
   font-size: x-large;
 }
+
+.userNotLoggedInMessage {
+  color: darkslategrey;
+  font-style: italic;
+}

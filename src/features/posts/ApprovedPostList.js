@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { addPost } from './PostListSlice';
 import { Post } from './Post'
 
 function ApprovedPostList(props) {
@@ -32,15 +31,8 @@ function ApprovedPostList(props) {
 
 // Code below to try and bind this so that this component is re-rendered on store change
 const mapStateToProps = state => {
-    return {
-      posts: state.posts
-    }
-  }
-  
-  const mapDispatchToProps = dispatch => {
-    return {
-      addPost: addPost
-    }
-  }
-
-  export default connect(mapStateToProps, mapDispatchToProps)(ApprovedPostList)
+  return {
+    posts: state.posts
+  };
+}
+export default connect(mapStateToProps)(ApprovedPostList)

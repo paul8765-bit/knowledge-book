@@ -1,14 +1,13 @@
 import React from 'react';
-import { NewPostAuthor } from './NewPostAuthor';
-import { NewPostContent } from './NewPostContent';
+import NewPostAuthor from './NewPostAuthor';
+import NewPostContent from './NewPostContent';
 
-export class NewPostForm extends React.Component {
-    render() {
-        return (
-            <div className="newPostForm">
-                <NewPostAuthor />
-                <NewPostContent />
-            </div>
-        );
-    }
+export default function(props) {
+    const loggedInUser = props.loggedInUser;
+    return (
+        <div className="newPostForm">
+            <NewPostAuthor loggedInUser={loggedInUser} />
+            <NewPostContent loggedInUser={loggedInUser} />
+        </div>
+    );
 }

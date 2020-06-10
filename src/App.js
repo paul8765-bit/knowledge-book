@@ -4,9 +4,11 @@ import './App.css';
 import Homepage from './Homepage';
 import LikedPosts from './LikedPosts';
 import AdminArea from './AdminArea';
+import LoginPage from './LoginPage';
 import Header from './Header';
 import { Router } from '@reach/router';
 import { addPost } from './features/posts/PostListSlice';
+import store from './app/store';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,10 +16,11 @@ function App() {
   dispatch(addPost('7 Scottish footballers have been called Kenny', 'BBC Sport', 'James White'));
   return (
     <div className="App">
-      <Header />
+      <Header loggedInUser={store.getState().loggedInUser}/>
       <Router primary={false}>
         <LikedPosts path="likedPosts" />
         <AdminArea path="adminArea" />
+        <LoginPage path="loginPage" loggedInUser={store.getState().loggedInUser} />
         <Homepage default />
       </Router>
     </div>
