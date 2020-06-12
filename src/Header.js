@@ -9,7 +9,7 @@ function Header(props) {
                             '';
     return (
     <header className="App-header">
-        <img src="KnowledgeBase_big.png" className="App-logo" alt="logo" />
+        <img src="KnowledgeBook_big.png" className="App-logo" alt="logo" />
         <nav>
             <Link to="homepage">Home | </Link>
             <Link to="likedPosts">Liked Posts | </Link>
