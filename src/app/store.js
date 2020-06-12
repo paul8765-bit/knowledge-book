@@ -5,6 +5,6 @@ import LoginUserSlice from '../features/users/LoginUserSlice';
 export default configureStore({
   reducer: {
     posts: PostListSliceReducer,
-    loggedInUser: LoginUserSlice
+    activeUser: LoginUserSlice
   }
 });

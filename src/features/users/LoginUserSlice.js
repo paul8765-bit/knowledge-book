@@ -1,28 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const loginUserSlice = createSlice({
-    initialState: '',
+    initialState: {
+        isUserLoggedIn: false,
+        username: '',
+        isAdmin: false
+    },
     name: 'users',
     reducers: {
-        logInUser:
-        {
+        logInUser: {
             reducer(state, action) {
                 const user = action.payload.username;
-                return user;
+                const isAdmin = action.payload.isAdmin;
+                state.username = user;
+                state.isAdmin = isAdmin;
+                state.isUserLoggedIn = true;
             },
-            prepare(username) {
+            prepare(username, isAdmin) {
                 return (
                     {
                         payload: {
-                            username
+                            username,
+                            isAdmin
                         }
-                    }
-                );
+                    });
             }
         },
         logOutUser(state, action)
         {
-            return '';
+            state.username = '';
+            state.isAdmin = false;
+            state.isUserLoggedIn = false;
         }
     }
 });

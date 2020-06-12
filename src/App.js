@@ -16,11 +16,11 @@ function App() {
   dispatch(addPost('7 Scottish footballers have been called Kenny', 'BBC Sport', 'James White'));
   return (
     <div className="App">
-      <Header loggedInUser={store.getState().loggedInUser}/>
+      <Header activeUser={store.getState().activeUser}/>
       <Router primary={false}>
         <LikedPosts path="likedPosts" />
         <AdminArea path="adminArea" />
-        <LoginPage path="loginPage" loggedInUser={store.getState().loggedInUser} />
+        <LoginPage path="loginPage" activeUser={store.getState().activeUser} />
         <Homepage default />
       </Router>
     </div>

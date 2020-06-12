@@ -3,7 +3,7 @@ import { addPost } from './PostListSlice';
 import { useDispatch } from 'react-redux';
 
 export default function(props) {
-    const loggedInUser = props.loggedInUser;
+    const activeUser = props.activeUser;
     const dispatch = useDispatch();
     const [newPostContentText, setNewPostContentText] = useState('');
     const [newPostContentSource, setNewPostContentSource] = useState('');
@@ -13,7 +13,7 @@ export default function(props) {
         if (!newPostContentText || !newPostContentSource || !factCheckboxTicked()) {
             return;
         }
-        dispatch(addPost(newPostContentText, newPostContentSource, loggedInUser));
+        dispatch(addPost(newPostContentText, newPostContentSource, activeUser.username));
         resetNewPost();
     };
 
@@ -23,7 +23,7 @@ export default function(props) {
         document.getElementById("input_checkbox").checked = false;
     };
 
-    if (loggedInUser) {
+    if (activeUser.isUserLoggedIn) {
         return (
             <div className="newPostContent">
                 <input className="newPostContentText" type="text" value={newPostContentText} 
