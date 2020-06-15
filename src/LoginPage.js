@@ -11,7 +11,7 @@ function LoginPage(props) {
 
     const onClickLogin = e => {
         // External API here
-        axios.post('http://35.179.62.132:3001/login', null, { params: { 
+        axios.post('https://knowledge-book-server.herokuapp.com/login', null, { params: { 
             username: usernameText, 
             hashedPassword: hashPassword(passwordText)
         }})
